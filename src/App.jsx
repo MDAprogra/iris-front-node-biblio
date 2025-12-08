@@ -1,4 +1,4 @@
-import { use, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { Button } from './components/Button';
 import { LivreItem } from './components/LivreItem';
