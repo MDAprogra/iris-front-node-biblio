@@ -13,3 +13,13 @@ export const getLivres = async () => {
   }
   return await reponse.json();
 };
+
+export const getLivreDetail = async (isbn) => {
+  await wait();
+  const reponse = await fetch(`http://localhost:3000/livres/${isbn}`);
+
+  if (!reponse.ok) {
+    throw Error('Loading livres data failed');
+  }
+  return await reponse.json();
+};
