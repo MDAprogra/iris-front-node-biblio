@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 
-import { Button } from '../components/Button';
-import { useAPI } from '../hooks/useAPI';
+import { Button } from '../../components/Button';
+import { useAPI } from '../../hooks/useAPI';
 
 function Auteur() {
   const { isloading, donnees, fetch } = useAPI('auteurs');

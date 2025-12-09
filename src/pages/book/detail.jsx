@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router';
 
-import { Button } from '../components/Button';
-import { useAPI } from '../hooks/useAPI';
+import { Button } from '../../components/Button';
+import { useAPI } from '../../hooks/useAPI';
 
 export function PageDetail() {
   const params = useParams();

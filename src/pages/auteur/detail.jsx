@@ -3,8 +3,8 @@ import 'dayjs/locale/fr';
 
 import { Link, useParams } from 'react-router';
 
-import Button from '../components/Button';
-import { useAPI } from '../hooks/useAPI';
+import Button from '../../components/Button';
+import { useAPI } from '../../hooks/useAPI';
 
 export function AuteurDetail() {
   dayjs.locale('fr');
@@ -14,7 +14,7 @@ export function AuteurDetail() {
   return (
     <>
       {isloading && <h3>Loading ...</h3>}
-      {!isloading && !donnees.data && <h3>Pas de livre trouvé ...</h3>}
+      {!isloading && !donnees.data && <h3>Pas d'auteur trouvé ...</h3>}
       {!isloading && donnees.data && (
         <>
           <Link to={`/auteurs`}>Retour</Link>

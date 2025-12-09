@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 
-import { useAPI } from '../hooks/useAPI';
-import Button from './Button';
+import Button from '../../../components/Button';
+import { useAPI } from '../../../hooks/useAPI';
 
 export const LivreItem = ({ isbn, children, onDelete }) => {
   const { isloading, fetch } = useAPI(`livres/${isbn}/delete`, false, () => {

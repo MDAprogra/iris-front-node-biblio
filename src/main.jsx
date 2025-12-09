@@ -3,11 +3,11 @@ import { createBrowserRouter } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
 
 import { AppLayout } from './layout/AppLayout.jsx';
-import App from './pages/App.jsx';
-import Auteur from './pages/Auteur.jsx';
-import { AuteurDetail } from './pages/AuteurDetail.jsx';
+import { AuteurDetail } from './pages/auteur/detail.jsx';
+import { Add } from './pages/book/add.jsx';
+import { PageDetail } from './pages/book/detail.jsx';
+import App from './pages/book/list.jsx';
 import { Page404 } from './pages/Page404.jsx';
-import { PageDetail } from './pages/PageDetail.jsx';
 
 // createRoot(document.getElementById('root')).render(<App />);
 
@@ -26,11 +26,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/auteurs',
-        element: <Auteur />,
+        element: <AuteurDetail />,
       },
       {
         path: '/auteurs/:id',
         element: <AuteurDetail />,
+      },
+      {
+        path: '/add',
+        element: <Add />,
       },
     ],
     errorElement: <Page404 />,

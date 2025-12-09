@@ -1,6 +1,6 @@
-import { Button } from '../components/Button';
-import { LivreItem } from '../components/LivreItem';
-import { useAPI } from '../hooks/useAPI';
+import { Button } from '../../components/Button';
+import { useAPI } from '../../hooks/useAPI';
+import { LivreItem } from './items/LivreItem';
 
 function App() {
   const { isloading, donnees, fetch } = useAPI('livres', true);
