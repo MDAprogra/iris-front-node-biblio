@@ -3,23 +3,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { Button } from '../components/Button';
 import { LivreItem } from '../components/LivreItem';
 import Title from '../components/title';
-import { getLivres } from '../services/livres';
+import { useAPI } from '../hooks/useAPI';
 
 function App() {
-  const [isloading, setLoading] = useState(true);
-  const [livres, setLivres] = useState([]);
-
-  const loadLivres = useCallback(async () => {
-    setLoading(true);
-    const res = await getLivres();
-    setLoading(false);
-    setLivres(res.data);
-  }, []);
-
-  useEffect(() => {
-    loadLivres();
-  }, [loadLivres]);
-
+  const { isloading, donnees, fetch } = useAPI('livres');
   return (
     <>
       <Title>My Favorite Books</Title>
@@ -28,13 +15,13 @@ function App() {
       ) : (
         <>
           <ul>
-            {livres.map((livre) => (
-              <LivreItem isbn={livre.ISBN} key={livre.ISBN}>
-                {livre.titre}
+            {donnees?.data?.map((data) => (
+              <LivreItem isbn={data.ISBN} key={data.ISBN}>
+                {data.titre}
               </LivreItem>
             ))}
           </ul>
-          <Button onClick={() => loadLivres()}>Charger les données</Button>
+          <Button onClick={() => fetch()}>Charger les données</Button>
         </>
       )}
     </>
