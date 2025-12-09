@@ -20,7 +20,6 @@ function App() {
     loadLivres();
   }, [loadLivres]);
 
-  console.log(isloading);
   return (
     <>
       <Title>My Favorite Books</Title>
