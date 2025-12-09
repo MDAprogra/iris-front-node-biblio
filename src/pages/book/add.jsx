@@ -20,24 +20,21 @@ export function Add() {
     }
 
     if (isValid) {
-      const response = await fetch(
-        'https://iris-node-biblio-production.up.railway.app/livres',
-        {
-          method: 'POST',
-          body: JSON.stringify({
-            isbn: formValues.get('isbn'),
-            titre: formValues.get('titre'),
-            anneeSortie: 2000,
-            resumer: null,
-            idAuteur: 1,
-            idEditeur: 1,
-            idGenre: 1,
-          }),
-          headers: new Headers({
-            'Content-Type': 'application/json',
-          }),
-        },
-      );
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/livres`, {
+        method: 'POST',
+        body: JSON.stringify({
+          isbn: formValues.get('isbn'),
+          titre: formValues.get('titre'),
+          anneeSortie: 2000,
+          resumer: null,
+          idAuteur: 1,
+          idEditeur: 1,
+          idGenre: 1,
+        }),
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      });
       const data = await response.json();
       alert(JSON.stringify(data));
       formEvent.preventDefault();

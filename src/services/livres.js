@@ -6,9 +6,7 @@ export const wait = () => {
 
 export const getLivres = async () => {
   //   await wait();
-  const reponse = await fetch(
-    'https://iris-node-biblio-production.up.railway.app/livres',
-  );
+  const reponse = await fetch(`${import.meta.env.VITE_API_URL}/livres`);
 
   if (!reponse.ok) {
     throw Error('Loading livres data failed');
@@ -18,9 +16,7 @@ export const getLivres = async () => {
 
 export const getLivreDetail = async (isbn) => {
   //   await wait();
-  const reponse = await fetch(
-    `https://iris-node-biblio-production.up.railway.app/livres/${isbn}`,
-  );
+  const reponse = await fetch(`${import.meta.env.VITE_API_URL}/livres/${isbn}`);
 
   if (!reponse.ok) {
     throw Error('Loading livres data failed');
@@ -30,9 +26,7 @@ export const getLivreDetail = async (isbn) => {
 
 export const getAuteurs = async () => {
   //await wait();
-  const reponse = await fetch(
-    'https://iris-node-biblio-production.up.railway.app/auteurs',
-  );
+  const reponse = await fetch(`${import.meta.env.VITE_API_URL}/auteurs`);
 
   if (!reponse.ok) {
     throw Error('Loading auteurs data failed');
@@ -42,9 +36,7 @@ export const getAuteurs = async () => {
 
 export const getAuteurDetail = async (id) => {
   //await wait();
-  const reponse = await fetch(
-    `https://iris-node-biblio-production.up.railway.app/auteurs/${id}`,
-  );
+  const reponse = await fetch(`${import.meta.env.VITE_API_URL}/auteurs/${id}`);
 
   if (!reponse.ok) {
     throw Error('Loading auteur data failed');
