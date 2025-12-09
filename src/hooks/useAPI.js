@@ -48,7 +48,10 @@ export const useAPI = (req, auto = true, onSuccess) => {
       };
 
       try {
-        const response = await fetch(`http://localhost:3000/${req}`, options);
+        const response = await fetch(
+          `https://iris-node-biblio-production.up.railway.app/${req}`,
+          options,
+        );
 
         if (!response.ok) {
           setError('Une erreur est survenue');
