@@ -4,13 +4,9 @@ import { useAPI } from '../hooks/useAPI';
 import Button from './Button';
 
 export const LivreItem = ({ isbn, children, onDelete }) => {
-  const { isloading, donnees, fetch } = useAPI(
-    `livres/${isbn}/delete`,
-    false,
-    () => {
-      onDelete?.();
-    },
-  );
+  const { isloading, fetch } = useAPI(`livres/${isbn}/delete`, false, () => {
+    onDelete?.();
+  });
 
   const envoyerBody = () => {
     fetch({
