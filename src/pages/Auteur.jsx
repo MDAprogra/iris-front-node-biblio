@@ -1,10 +1,7 @@
-import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router';
 
 import { Button } from '../components/Button';
-import { LivreItem } from '../components/LivreItem';
 import { useAPI } from '../hooks/useAPI';
-import { getAuteurs } from '../services/livres';
 
 function Auteur() {
   const { isloading, donnees, fetch } = useAPI('auteurs');
